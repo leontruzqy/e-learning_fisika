@@ -37,6 +37,11 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^5.1.0
   font_awesome_flutter: ^10.5.0
+  video_player: ^2.7.0
+  flutter_math_fork: ^0.7.1
+  flutter_tex: ^4.0.3+4
+  flutter_xlider: ^3.5.0
+  
   # flutter/services: ^2.0.7 # handle orientation
 
 dev_dependencies:
@@ -65,6 +70,34 @@ flutter:
   assets:
     - assets/images/ic_uny.png
     - assets/images/bg.jpg
+    - assets/images/table_suhu1.png
+    - assets/images/table_suhu2.png
+    - assets/images/titik_didih.png
+    - assets/images/pzcair1.png
+    - assets/images/kalor1.png
+    - assets/images/benar.png
+    - assets/videos/videos1.mp4
+    - assets/videos/videos2.mp4
+    - assets/images/correct.png
+    - assets/images/wrong.png
+    - assets/images/pembahasan1.png
+    - assets/images/pembahasan2.png
+    - assets/images/pembahasan4.png
+    - assets/images/pembahasan5.png
+    - assets/images/perpindahan1.png
+    - assets/images/perpindahan2.png
+    - assets/images/perpindahan3.png
+    - assets/images/profil.png
+    - assets/images/quiz1.png
+    - assets/images/quiz2.png
+    - assets/images/quiz3.png
+    - assets/images/quiz4.png
+    - assets/images/quiz5.png
+    - assets/images/quiz6.png
+    - assets/images/quiz7.png
+    - assets/images/quiz8.png
+    - assets/images/quiz9.png
+    - assets/images/quiz10.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,10 +1,17 @@
 // ignore_for_file: prefer_const_constructors
-
 import 'dart:async';
-import 'package:elearning/topic.dart';
+import 'package:elearning/pages/pemuaianZat.dart';
+import 'package:elearning/pages/videos_one.dart';
+import 'package:elearning/pages/suhu.dart';
+import 'package:elearning/pages/kalor.dart';
+import 'package:elearning/pages/profil.dart';
+import 'package:elearning/pages/pemuaianZatPadat.dart';
+import 'package:elearning/pages/perpindahanSuhu.dart';
+import 'package:elearning/pages/quiz.dart';
+import 'package:elearning/pages/videos_two.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'; // Import the orientation package
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const LearningApp());
@@ -78,85 +85,89 @@ class _SplashScreenState extends State<SplashScreen> {
 }
 
 class LearningScreen extends StatelessWidget {
-  final List<Topic> topics = [
-    Topic(title: 'Suhu', content: 'Content for Suhu topic.'),
-    Topic(title: 'Kalor', content: 'Content for Kalor topic.'),
-    Topic(title: 'Pemuaian Zat', content: 'Content for Pemuaian Zat topic.'),
-    Topic(
-        title: 'Pemuaian Zat Padat',
-        content: 'Content for Pemuaian Zat Padat topic.'),
-    Topic(
-        title: 'Perpindahan Kalor',
-        content: 'Content for Perpindahan Kalor topic.')
+  final List<String> topics = [
+    'Suhu',
+    'Kalor',
+    'Pemuaian Zat',
+    'Pemuaian Zat Padat',
+    'Perpindahan Kalor',
+    'Fenomena Suhu dan Kalor'
   ];
-
-  // LearningScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Materi'),
+        title: Text('Materi'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            // Handle the back button action here
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MainMenuScreen()),
+            );
+          },
+        ),
       ),
       body: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2, // Two columns
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          crossAxisSpacing: 80,
+          mainAxisSpacing: 10,
         ),
+        padding: EdgeInsets.all(30),
         itemCount: topics.length,
         itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => TopicDetailScreen(topic: topics[index]),
-                ),
-              );
+          return MaterialButton(
+            onPressed: () {
+              // Navigate to the corresponding topic screen
+              if (topics[index] == 'Suhu') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SuhuTopicScreen()),
+                );
+              } else if (topics[index] == 'Kalor') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => KalorTopicScreen()),
+                );
+              } else if (topics[index] == 'Pemuaian Zat') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PemuaianZatTopicScreen()),
+                );
+              } else if (topics[index] == 'Pemuaian Zat Padat') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PemuaianZatPadatTopicScreen()),
+                );
+              } else if (topics[index] == 'Perpindahan Kalor') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => PerpindahanSuhuTopicScreen()),
+                );
+              } else if (topics[index] == 'Fenomena Suhu dan Kalor') {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => VideoTwoScreen()),
+                );
+              }
             },
-            child: Card(
-              elevation: 2.0,
-              margin: const EdgeInsets.all(80.0),
-              child: Center(
-                child: Text(
-                  topics[index].title,
+            color: Colors.brown, // Customize the button color
+            textColor: Colors.white, // Customize the text color
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20)), // Adjust padding here
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(topics[index],
                   style: GoogleFonts.roboto(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                ), // Access the title property
-              ),
+                      fontSize: 18, fontWeight: FontWeight.bold)),
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-class TopicDetailScreen extends StatelessWidget {
-  final Topic topic;
-
-  TopicDetailScreen({required this.topic});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(topic.title),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              topic.content,
-              style: TextStyle(fontSize: 16),
-            ),
-            // Add other widgets to display more details about the topic
-          ],
-        ),
       ),
     );
   }
@@ -215,8 +226,8 @@ class WelcomeScreen extends StatelessWidget {
             right: 16,
             child: Image.asset(
               'assets/images/ic_uny.png', // Change to your image path
-              width: 120,
-              height: 120,
+              width: 160,
+              height: 160,
             ),
           ),
         ],
@@ -225,19 +236,17 @@ class WelcomeScreen extends StatelessWidget {
   }
 }
 
-class MainMenuScreen extends StatelessWidget {
+class MainMenuScreen extends StatefulWidget {
+  @override
+  State<MainMenuScreen> createState() => _MainMenuScreenState();
+}
+
+class _MainMenuScreenState extends State<MainMenuScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         children: [
-          // Background image (replace with your actual image)
-          // Image.asset(
-          //   'assets/images/bg.jpg',
-          //   fit: BoxFit.cover,
-          //   width: double.infinity,
-          //   height: double.infinity,
-          // ),
           Padding(
             padding: const EdgeInsets.all(26.0),
             child: Ink(
@@ -249,7 +258,10 @@ class MainMenuScreen extends StatelessWidget {
                 icon: const Icon(Icons.arrow_back_ios_new_outlined),
                 color: Colors.white,
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WelcomeScreen()),
+                  );
                 },
               ),
             ),
@@ -266,7 +278,7 @@ class MainMenuScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => LearningScreen()),
+                            builder: (context) => VideoOneScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -292,7 +304,7 @@ class MainMenuScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BlankPage()),
+                        MaterialPageRoute(builder: (context) => QuizScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -318,7 +330,8 @@ class MainMenuScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BlankPage()),
+                        MaterialPageRoute(
+                            builder: (context) => ProfileScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -359,3 +372,6 @@ class BlankPage extends StatelessWidget {
     );
   }
 }
+
+//############################################################################################################
+
