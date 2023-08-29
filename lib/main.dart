@@ -93,6 +93,7 @@ class LearningScreen extends StatelessWidget {
     'Perpindahan Kalor',
     'Fenomena Suhu dan Kalor'
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,65 +110,109 @@ class LearningScreen extends StatelessWidget {
           },
         ),
       ),
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-          crossAxisSpacing: 80,
-          mainAxisSpacing: 10,
-        ),
-        padding: EdgeInsets.all(30),
-        itemCount: topics.length,
-        itemBuilder: (context, index) {
-          return MaterialButton(
-            onPressed: () {
-              // Navigate to the corresponding topic screen
-              if (topics[index] == 'Suhu') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SuhuTopicScreen()),
+      body: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: topics.sublist(0, 3).map((topic) {
+                return Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (topic == 'Suhu') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SuhuTopicScreen()),
+                        );
+                      } else if (topic == 'Kalor') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => KalorTopicScreen()),
+                        );
+                      } else if (topic == 'Pemuaian Zat') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PemuaianZatTopicScreen()),
+                        );
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.brown,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      padding: EdgeInsets.all(20),
+                    ),
+                    child: Text(
+                      topic,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 );
-              } else if (topics[index] == 'Kalor') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => KalorTopicScreen()),
-                );
-              } else if (topics[index] == 'Pemuaian Zat') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => PemuaianZatTopicScreen()),
-                );
-              } else if (topics[index] == 'Pemuaian Zat Padat') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => PemuaianZatPadatTopicScreen()),
-                );
-              } else if (topics[index] == 'Perpindahan Kalor') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => PerpindahanSuhuTopicScreen()),
-                );
-              } else if (topics[index] == 'Fenomena Suhu dan Kalor') {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => VideoTwoScreen()),
-                );
-              }
-            },
-            color: Colors.brown, // Customize the button color
-            textColor: Colors.white, // Customize the text color
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20)), // Adjust padding here
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(topics[index],
-                  style: GoogleFonts.roboto(
-                      fontSize: 18, fontWeight: FontWeight.bold)),
+              }).toList(),
             ),
-          );
-        },
+          ),
+          Expanded(
+            flex: 1,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: topics.sublist(3).map((topic) {
+                return Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (topic == 'Pemuaian Zat Padat') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  PemuaianZatPadatTopicScreen()),
+                        );
+                      } else if (topic == 'Perpindahan Kalor') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  PerpindahanSuhuTopicScreen()),
+                        );
+                      } else if (topic == 'Fenomena Suhu dan Kalor') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => VideoTwoScreen()),
+                        );
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.brown,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      padding: EdgeInsets.all(20),
+                    ),
+                    child: Text(
+                      topic,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -358,20 +403,5 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
     );
   }
 }
-
-class BlankPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Blank Page'),
-      ),
-      body: Center(
-        child: Text('This is a blank page.'),
-      ),
-    );
-  }
-}
-
 //############################################################################################################
 

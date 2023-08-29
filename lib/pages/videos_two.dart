@@ -43,7 +43,7 @@ class _VideoTwoScreenState extends State<VideoTwoScreen> {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: Icon(Icons.arrow_forward),
           ),
         ],
       ),

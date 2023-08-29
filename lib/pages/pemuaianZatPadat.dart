@@ -229,7 +229,7 @@ class PemuaianZatPadatTopicScreen extends StatelessWidget {
                 Row(
                   children: [
                     Math.tex(
-                      r'\A_t',
+                      r'A_t',
                       mathStyle: MathStyle.display,
                     ),
                     Text(
@@ -242,7 +242,7 @@ class PemuaianZatPadatTopicScreen extends StatelessWidget {
                 Row(
                   children: [
                     Math.tex(
-                      r'\A_0',
+                      r'A_0',
                       mathStyle: MathStyle.display,
                     ),
                     Text(

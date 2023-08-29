@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:elearning/pages/pembahasan.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_xlider/flutter_xlider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_math_fork/ast.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
@@ -88,19 +87,36 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
                 'Temperatur:',
                 style: TextStyle(fontSize: 18),
               ),
-              Slider(
-                value: _sliderValue,
-                onChanged: (newValue) {
-                  setState(() {
-                    _sliderValue = newValue;
-                    _fahrenheitValue =
-                        _sliderValue * 9 / 5 + 32; // Update Fahrenheit value
-                    _kelvinValue = _sliderValue + 273.15; // Update Kelvin value
-                    _reamurValue = _sliderValue * 4 / 5; // Update Reamur value
-                  });
-                },
-                min: 0.0,
-                max: 100.0,
+              SliderTheme(
+                data: SliderTheme.of(context).copyWith(
+                  activeTrackColor:
+                      Colors.blue, // Customize the active track color
+                  inactiveTrackColor:
+                      Colors.grey, // Customize the inactive track color
+                  thumbColor: Colors.blue, // Customize the thumb color
+                  overlayColor: Colors.blue
+                      .withOpacity(0.3), // Customize the overlay color
+                  thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10.0),
+                  overlayShape: RoundSliderOverlayShape(overlayRadius: 20.0),
+                  tickMarkShape: RoundSliderTickMarkShape(),
+                ),
+                child: Slider(
+                  value: _sliderValue,
+                  label: "tes",
+                  onChanged: (newValue) {
+                    setState(() {
+                      _sliderValue = newValue;
+                      _fahrenheitValue =
+                          _sliderValue * 9 / 5 + 32; // Update Fahrenheit value
+                      _kelvinValue =
+                          _sliderValue + 273.15; // Update Kelvin value
+                      _reamurValue =
+                          _sliderValue * 4 / 5; // Update Reamur value
+                    });
+                  },
+                  min: 0.0,
+                  max: 100.0,
+                ),
               ),
               Text(
                 'Celcius',
@@ -117,7 +133,7 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
               Row(
                 children: [
                   Math.tex(
-                    r'T~°F~=~\frac{9}{5}~x~99~+~32=~',
+                    r'T~°F~=~\frac{9}{5}~ \times ~99~+~32=~',
                     mathStyle: MathStyle.display,
                     textStyle: fontSizeMathText,
                   ),
@@ -151,7 +167,7 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
               Row(
                 children: [
                   Math.tex(
-                    r'T ~ ° R ~ = ~ \frac {4} {5} ~ x ~ 99 ~ = ~ ',
+                    r'T ~ ° R ~ = ~ \frac {4} {5} ~ \times ~ 99 ~ = ~ ',
                     mathStyle: MathStyle.display,
                     textStyle: fontSizeMathText,
                   ),
