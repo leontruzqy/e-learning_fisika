@@ -32,10 +32,22 @@ class _VideoTwoScreenState extends State<VideoTwoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Suhu dan Kalor'),
+        title: const Text('Suhu dan Kalor'),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            audioPlayer.resume();
+            // Handle the back button action here
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LearningScreen()),
+            );
+          },
+        ),
         actions: [
           IconButton(
             onPressed: () {
+              audioPlayer.resume();
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
@@ -43,7 +55,7 @@ class _VideoTwoScreenState extends State<VideoTwoScreen> {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),

@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 2.0.0+1
 
 environment:
   sdk: '>=3.0.6 <4.0.0'
@@ -41,7 +41,8 @@ dependencies:
   flutter_math_fork: ^0.7.1
   flutter_tex: ^4.0.3+4
   flutter_xlider: ^3.5.0
-  
+  flutter_launcher_icons: ^0.13.1
+  audioplayers: ^5.1.0
   # flutter/services: ^2.0.7 # handle orientation
 
 dev_dependencies:
@@ -98,6 +99,7 @@ flutter:
     - assets/images/quiz8.png
     - assets/images/quiz9.png
     - assets/images/quiz10.png
+    - assets/audio/music.mp3
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -125,3 +127,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_launcher_icons:
+  #  image_path: "assets/images/icon-128x128.png"
+  image_path_android: "assets/images/iconElearning/android/play_store_512.png"
+  image_path_ios: "assets/images/iconElearning/ios/AppIcon~ios-marketing.png"
+  android: true # can specify file name here e.g. "ic_launcher"
+  ios: true # can specify file name here e.g. "My-Launcher-Icon"
+  # adaptive_icon_background: "assets/images/christmas-background.png" # only available for Android 8.0 devices and above
+  # adaptive_icon_foreground: "assets/images/icon-foreground-432x432.png" # only available for Android 8.0 devices and above
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  remove_alpha_ios: true

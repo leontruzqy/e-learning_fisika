@@ -158,7 +158,7 @@ class _QuizScreenState extends State<QuizScreen> {
 
       if (currentQuestion < questions.length - 1) {
         // The next question is available
-        Future.delayed(Duration(seconds: 1), () {
+        Future.delayed(const Duration(seconds: 1), () {
           setState(() {
             currentQuestion++;
             isAnswerSelected = false; // Reset the flag for the next question
@@ -183,7 +183,7 @@ class _QuizScreenState extends State<QuizScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quiz'),
+        title: const Text('Quiz'),
       ),
       body: SingleChildScrollView(
         child: Stack(
@@ -208,9 +208,9 @@ class _QuizScreenState extends State<QuizScreen> {
                   children: [
                     Text(
                       questions[currentQuestion]['questionText'] as String,
-                      style: TextStyle(fontSize: 18),
+                      style: const TextStyle(fontSize: 18),
                     ),
-                    SizedBox(height: 20), // Add spacing here
+                    const SizedBox(height: 20), // Add spacing here
 
                     ...(questions[currentQuestion]['answers']
                             as List<Map<String, dynamic>>)
@@ -224,11 +224,11 @@ class _QuizScreenState extends State<QuizScreen> {
                                         answer['correct'] as bool),
                                 child: Text(
                                   answer['text'] as String,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 18, color: Colors.white),
                                 ),
                               ),
-                              SizedBox(height: 10), // Add spacing here
+                              const SizedBox(height: 10), // Add spacing here
                             ],
                           ),
                         )
@@ -253,7 +253,7 @@ class ResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quiz Result'),
+        title: const Text('Quiz Result'),
       ),
       body: Center(
         child: Column(
@@ -261,13 +261,13 @@ class ResultScreen extends StatelessWidget {
           children: [
             Text(
               'Skor kamu: $score',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -277,9 +277,9 @@ class ResultScreen extends StatelessWidget {
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => QuizScreen()));
                   },
-                  child: Text('Ulangi'),
+                  child: const Text('Ulangi'),
                 ),
-                SizedBox(width: 20), // Add spacing between the buttons
+                const SizedBox(width: 20), // Add spacing between the buttons
                 ElevatedButton(
                   onPressed: () {
                     // Navigate back to the quiz screen or any other desired screen
@@ -288,9 +288,9 @@ class ResultScreen extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => MainMenuScreen()));
                   },
-                  child: Text('Main Menu'),
+                  child: const Text('Main Menu'),
                 ),
-                SizedBox(width: 20), // Add spacing between the buttons
+                const SizedBox(width: 20), // Add spacing between the buttons
                 ElevatedButton(
                   onPressed: () {
                     // Navigate back to the quiz screen or any other desired screen
@@ -300,7 +300,7 @@ class ResultScreen extends StatelessWidget {
                             builder: (context) =>
                                 PembahasanQuizSatuScreen(score: score)));
                   },
-                  child: Text('Pembahasan'),
+                  child: const Text('Pembahasan'),
                 ),
               ],
             ),

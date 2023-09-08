@@ -14,7 +14,7 @@ class PemuaianZatPadatTopicScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pemuaian Zat Padat',
         ),
         centerTitle: true,
@@ -28,7 +28,7 @@ class PemuaianZatPadatTopicScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -39,7 +39,7 @@ class PemuaianZatPadatTopicScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -436,7 +436,7 @@ class _PemuaianZatPadatQuizScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pemuaian Zat Padat Quiz'),
+        title: const Text('Quiz : Pemuaian Zat Padat'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -446,90 +446,95 @@ class _PemuaianZatPadatQuizScreenState
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Sebuah benda yang terbuat dari baja memiliki panjang 1000 cm. Berapakah pertambahan panjang baja itu, jika terjadi perubahan suhu sebesar 50°C?',
                     style: TextStyle(fontSize: 18),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text('0,5 cm'),
+                    child: const Text('0,5 cm'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text('0,6 cm'),
+                    child: const Text('0,6 cm'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text('0,7 cm'),
+                    child: const Text('0,7 cm'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text('0,8 cm'),
+                    child: const Text('0,8 cm'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text('0,9 cm'),
+                    child: const Text('0,9 cm'),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   if (hasAnsweredQuestion)
                     Column(
                       children: [
-                        Text(
+                        const Text(
                           'Jawaban: 0,6 cm',
                           style: TextStyle(fontSize: 18),
                         ),
@@ -542,7 +547,7 @@ class _PemuaianZatPadatQuizScreenState
                               ),
                             );
                           },
-                          child: Text('Pembahasan'),
+                          child: const Text('Pembahasan'),
                         ),
                       ],
                     ),

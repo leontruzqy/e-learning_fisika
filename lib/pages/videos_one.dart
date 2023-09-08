@@ -1,6 +1,7 @@
 import 'package:elearning/main.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class VideoOneScreen extends StatefulWidget {
   @override
@@ -19,6 +20,7 @@ class _VideoOneScreenState extends State<VideoOneScreen> {
         // Ensure the first frame is shown and set state to update the UI
         setState(() {});
       });
+    // Pause background music when entering this screen
   }
 
   @override
@@ -36,6 +38,9 @@ class _VideoOneScreenState extends State<VideoOneScreen> {
         actions: [
           IconButton(
             onPressed: () {
+              // audioPlayer.play(AssetSource('audio/music.mp3'));
+              // audioPlayer.setVolume(0.2);
+              audioPlayer.resume();
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
@@ -43,7 +48,7 @@ class _VideoOneScreenState extends State<VideoOneScreen> {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -72,4 +77,3 @@ class _VideoOneScreenState extends State<VideoOneScreen> {
     );
   }
 }
-

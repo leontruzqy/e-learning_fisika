@@ -1,3 +1,4 @@
+import 'package:elearning/main.dart';
 import 'package:elearning/pages/kalor.dart';
 import 'package:elearning/pages/pemuaianZat.dart';
 import 'package:elearning/pages/pemuaianZatPadat.dart';
@@ -11,7 +12,7 @@ class PembahasanSatuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Suhu',
         ),
         centerTitle: true,
@@ -25,7 +26,7 @@ class PembahasanSatuScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -43,7 +44,7 @@ class PembahasanSatuScreen extends StatelessWidget {
             ''',
                       style: fontSizeText,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     Text(
@@ -80,7 +81,7 @@ class PembahasanDuaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Kalor',
         ),
         centerTitle: true,
@@ -94,7 +95,7 @@ class PembahasanDuaScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -105,7 +106,7 @@ class PembahasanDuaScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -139,7 +140,7 @@ class PembahasanTigaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Pemuaian Zat',
         ),
         centerTitle: true,
@@ -153,7 +154,7 @@ class PembahasanTigaScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -164,7 +165,7 @@ class PembahasanTigaScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -196,7 +197,7 @@ class PembahasanEmpatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Pemuaian Zat Padat',
         ),
         centerTitle: true,
@@ -210,7 +211,7 @@ class PembahasanEmpatScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -221,7 +222,7 @@ class PembahasanEmpatScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -253,7 +254,7 @@ class PembahasanLimaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Perpindahan Kalor',
         ),
         centerTitle: true,
@@ -267,10 +268,11 @@ class PembahasanLimaScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
+              audioPlayer.pause();
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
@@ -278,7 +280,7 @@ class PembahasanLimaScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),

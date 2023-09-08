@@ -1,8 +1,6 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:elearning/pages/pembahasan.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_math_fork/ast.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 
 class SuhuTopicScreen extends StatefulWidget {
@@ -25,7 +23,7 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Suhu'),
+        title: const Text('Suhu'),
         actions: [
           IconButton(
             onPressed: () {
@@ -36,7 +34,7 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -46,7 +44,7 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 '''Pendahuluan\n 
           Mengukur panas dan dingin suatu benda dengan tangan dan perasaan (indra) tidak dapat mengukur suhu secara tepat, mengapa hal tersebut dapat terjadi? Sedangkan, dengan menggunakan termometer, pengukuran akan lebih akurat berapa suhu suatu benda tersebut. Mengapa demikian?
           Suhu merupakan derajat panas atau dingin yang dirasakan indra. Suhu menyatakan derajat panas dinginnya suatu benda. Alat yang biasa digunakan untuk pengukur suhu dinamakan termometer.\n Thermometer\n
@@ -62,7 +60,7 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
                   width: 600,
                 ),
               ),
-              Text(
+              const Text(
                   '''\nKonversi antara 4 skala tersebut ditunjukkan oleh tabel berikut\n ''',
                   style: TextStyle(fontSize: 18)),
               Center(
@@ -71,7 +69,7 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
                   width: 700,
                 ),
               ),
-              Text(
+              const Text(
                 '''\nSkala Celcius dan Fahrenheit banyak kita temukan di kehidupan sehari-hari, sedangkan skala suhu yang ditetapkan sebagai Satuan Internasional adalah Kelvin. Berikut gambaran mengkonversi suhu pada 2 termometer yang berbeda secara umum dituliskan: \n
       ''',
                 style: TextStyle(fontSize: 18),
@@ -82,8 +80,8 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
                   width: 400,
                 ),
               ),
-              Text('\n\n\n\n'),
-              Text(
+              const Text('\n\n\n\n'),
+              const Text(
                 'Temperatur:',
                 style: TextStyle(fontSize: 18),
               ),
@@ -96,9 +94,9 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
                   thumbColor: Colors.blue, // Customize the thumb color
                   overlayColor: Colors.blue
                       .withOpacity(0.3), // Customize the overlay color
-                  thumbShape: RoundSliderThumbShape(enabledThumbRadius: 10.0),
-                  overlayShape: RoundSliderOverlayShape(overlayRadius: 20.0),
-                  tickMarkShape: RoundSliderTickMarkShape(),
+                  thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10.0),
+                  overlayShape: const RoundSliderOverlayShape(overlayRadius: 20.0),
+                  tickMarkShape: const RoundSliderTickMarkShape(),
                 ),
                 child: Slider(
                   value: _sliderValue,
@@ -124,7 +122,7 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
               ),
               Text(
                 'T °C =  ${_sliderValue.toStringAsFixed(2)} °C',
-                style: TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 18),
               ),
               Text(
                 'Fahrenheit',
@@ -139,7 +137,7 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
                   ),
                   Text(
                     '${_fahrenheitValue.toStringAsFixed(2)} °F',
-                    style: TextStyle(fontSize: 18),
+                    style: const TextStyle(fontSize: 18),
                   ),
                 ],
               ),
@@ -156,7 +154,7 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
                   ),
                   Text(
                     '${_kelvinValue.toStringAsFixed(2)} °K',
-                    style: TextStyle(fontSize: 18),
+                    style: const TextStyle(fontSize: 18),
                   ),
                 ],
               ),
@@ -173,7 +171,7 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
                   ),
                   Text(
                     '${_reamurValue.toStringAsFixed(2)} °R',
-                    style: TextStyle(fontSize: 18),
+                    style: const TextStyle(fontSize: 18),
                   )
                 ],
               ),
@@ -206,7 +204,7 @@ class _SuhuQuizScreenState extends State<SuhuQuizScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Suhu Quiz'),
+        title: const Text('Quiz : Suhu'),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -215,94 +213,99 @@ class _SuhuQuizScreenState extends State<SuhuQuizScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Pembuatan termometer X dengan titik beku 30 °X dan titik didih air 270 °X. Segelas air dengan suhu 30 °R akan setara dengan . . . °X',
                   style: TextStyle(fontSize: 18),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed:
                       hasAnsweredQuestion ? null : () => answerQuestion(),
                   style: ButtonStyle(
                     overlayColor: MaterialStateProperty.resolveWith<Color?>(
                       (Set<MaterialState> states) {
-                        if (states.contains(MaterialState.pressed))
+                        if (states.contains(MaterialState.pressed)) {
                           return Colors.greenAccent; //<-- SEE HERE
+                        }
                         return null; // Defer to the widget's default.
                       },
                     ),
                   ),
-                  child: Text('320'),
+                  child: const Text('320'),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed:
                       hasAnsweredQuestion ? null : () => answerQuestion(),
                   style: ButtonStyle(
                     overlayColor: MaterialStateProperty.resolveWith<Color?>(
                       (Set<MaterialState> states) {
-                        if (states.contains(MaterialState.pressed))
+                        if (states.contains(MaterialState.pressed)) {
                           return Colors.greenAccent; //<-- SEE HERE
+                        }
                         return null; // Defer to the widget's default.
                       },
                     ),
                   ),
-                  child: Text('280'),
+                  child: const Text('280'),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed:
                       hasAnsweredQuestion ? null : () => answerQuestion(),
                   style: ButtonStyle(
                     overlayColor: MaterialStateProperty.resolveWith<Color?>(
                       (Set<MaterialState> states) {
-                        if (states.contains(MaterialState.pressed))
+                        if (states.contains(MaterialState.pressed)) {
                           return Colors.greenAccent; //<-- SEE HERE
+                        }
                         return null; // Defer to the widget's default.
                       },
                     ),
                   ),
-                  child: Text('150'),
+                  child: const Text('150'),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed:
                       hasAnsweredQuestion ? null : () => answerQuestion(),
                   style: ButtonStyle(
                     overlayColor: MaterialStateProperty.resolveWith<Color?>(
                       (Set<MaterialState> states) {
-                        if (states.contains(MaterialState.pressed))
+                        if (states.contains(MaterialState.pressed)) {
                           return Colors.greenAccent; //<-- SEE HERE
+                        }
                         return null; // Defer to the widget's default.
                       },
                     ),
                   ),
-                  child: Text('120'),
+                  child: const Text('120'),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed:
                       hasAnsweredQuestion ? null : () => answerQuestion(),
                   style: ButtonStyle(
                     overlayColor: MaterialStateProperty.resolveWith<Color?>(
                       (Set<MaterialState> states) {
-                        if (states.contains(MaterialState.pressed))
+                        if (states.contains(MaterialState.pressed)) {
                           return Colors.greenAccent; //<-- SEE HERE
+                        }
                         return null; // Defer to the widget's default.
                       },
                     ),
                   ),
-                  child: Text('80'),
+                  child: const Text('80'),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 if (hasAnsweredQuestion)
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         'Jawaban: 120',
                         style: TextStyle(fontSize: 18),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: () {
                           Navigator.push(
@@ -312,7 +315,7 @@ class _SuhuQuizScreenState extends State<SuhuQuizScreen> {
                             ),
                           );
                         },
-                        child: Text('Pembahasan'),
+                        child: const Text('Pembahasan'),
                       ),
                     ],
                   ),

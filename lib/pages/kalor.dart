@@ -15,7 +15,7 @@ class KalorTopicScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Kalor',
         ),
         centerTitle: true,
@@ -29,7 +29,7 @@ class KalorTopicScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -40,7 +40,7 @@ class KalorTopicScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -303,14 +303,14 @@ Ketika air dipanaskan ada proses transfer energi dari satu zat ke zat lainnya ya
                     textStyle: fontSizeMathText,
                   ),
                 ),
-                Text('\n'),
+                const Text('\n'),
                 Center(
                     child: Math.tex(
                   r'm_1c_1∆T_1=m_2c_2∆T_2',
                   mathStyle: MathStyle.display,
                   textStyle: fontSizeMathText,
                 )),
-                Text('\n'),
+                const Text('\n'),
                 Center(
                   child: Math.tex(
                     r'dengan~∆T_1 = T - T_{akhir}~dan~∆T_2 = T_{akhir} - T~~sehingga',
@@ -318,7 +318,7 @@ Ketika air dipanaskan ada proses transfer energi dari satu zat ke zat lainnya ya
                     textStyle: fontSizeMathText,
                   ),
                 ),
-                Text('\n'),
+                const Text('\n'),
                 Center(
                   child: Math.tex(
                     r'm_1c_1\Bigg(T_1 - T_c\Bigg) = m_2c_2\Bigg(T_c - T_2\Bigg)',
@@ -429,7 +429,7 @@ class _KalorQuizScreenState extends State<KalorQuizScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Kalor Quiz'),
+        title: const Text('Quiz : Kalor'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -439,94 +439,99 @@ class _KalorQuizScreenState extends State<KalorQuizScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Tentukan perubahan suhu air terjun yang jatuh dari ketinggian 1 km, jika seluruh energinya berubah menjadi kalor . . .',
                     style: TextStyle(fontSize: 18),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text('4,17'),
+                    child: const Text('4,17'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text('3,6'),
+                    child: const Text('3,6'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text('2,4'),
+                    child: const Text('2,4'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text('1,2'),
+                    child: const Text('1,2'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text('0,6'),
+                    child: const Text('0,6'),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   if (hasAnsweredQuestion)
                     Column(
                       children: [
-                        Text(
+                        const Text(
                           'Jawaban: 2,4',
                           style: TextStyle(fontSize: 18),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         ElevatedButton(
                           onPressed: () {
                             Navigator.push(
@@ -536,7 +541,7 @@ class _KalorQuizScreenState extends State<KalorQuizScreen> {
                               ),
                             );
                           },
-                          child: Text('Pembahasan'),
+                          child: const Text('Pembahasan'),
                         ),
                       ],
                     ),

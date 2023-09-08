@@ -12,12 +12,12 @@ class PembahasanQuizSatuScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Soal Nomor 1',
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             // Handle the back button action here
             Navigator.push(
@@ -41,7 +41,7 @@ class PembahasanQuizSatuScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -74,12 +74,12 @@ class PembahasanQuizDuaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Soal Nomor 2',
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             // Handle the back button action here
             Navigator.push(
@@ -101,7 +101,7 @@ class PembahasanQuizDuaScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -112,7 +112,7 @@ class PembahasanQuizDuaScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -149,12 +149,12 @@ class PembahasanQuizTigaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Soal Nomor 3',
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             // Handle the back button action here
             Navigator.push(
@@ -176,7 +176,7 @@ class PembahasanQuizTigaScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -187,7 +187,7 @@ class PembahasanQuizTigaScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -222,12 +222,12 @@ class PembahasanQuizEmpatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Soal Nomor 4',
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             // Handle the back button action here
             Navigator.push(
@@ -249,7 +249,7 @@ class PembahasanQuizEmpatScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -260,7 +260,7 @@ class PembahasanQuizEmpatScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -295,12 +295,12 @@ class PembahasanQuizLimaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Soal Nomor 5',
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             // Handle the back button action here
             Navigator.push(
@@ -322,7 +322,7 @@ class PembahasanQuizLimaScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -333,7 +333,7 @@ class PembahasanQuizLimaScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -368,12 +368,12 @@ class PembahasanQuizEnamScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Soal Nomor 6',
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             // Handle the back button action here
             Navigator.push(
@@ -395,7 +395,7 @@ class PembahasanQuizEnamScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -406,7 +406,7 @@ class PembahasanQuizEnamScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -441,12 +441,12 @@ class PembahasanQuizTujuhScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Soal Nomor 7',
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             // Handle the back button action here
             Navigator.push(
@@ -468,7 +468,7 @@ class PembahasanQuizTujuhScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -480,7 +480,7 @@ class PembahasanQuizTujuhScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -515,12 +515,12 @@ class PembahasanQuizDelapanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Soal Nomor 8',
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             // Handle the back button action here
             Navigator.push(
@@ -542,7 +542,7 @@ class PembahasanQuizDelapanScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -554,7 +554,7 @@ class PembahasanQuizDelapanScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -589,12 +589,12 @@ class PembahasanQuizSembilanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Soal Nomor 9',
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             // Handle the back button action here
             Navigator.push(
@@ -617,7 +617,7 @@ class PembahasanQuizSembilanScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -629,7 +629,7 @@ class PembahasanQuizSembilanScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -664,12 +664,12 @@ class PembahasanQuizSepuluhScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pembahasan Quiz Soal Nomor 10',
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             // Handle the back button action here
             Navigator.push(
@@ -692,7 +692,7 @@ class PembahasanQuizSepuluhScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -703,7 +703,7 @@ class PembahasanQuizSepuluhScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),

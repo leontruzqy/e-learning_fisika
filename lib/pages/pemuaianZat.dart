@@ -14,7 +14,7 @@ class PemuaianZatTopicScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Pemuaian Zat',
         ),
         centerTitle: true,
@@ -28,7 +28,7 @@ class PemuaianZatTopicScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -39,7 +39,7 @@ class PemuaianZatTopicScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -227,7 +227,7 @@ class _PemuaianZatQuizScreenState extends State<PemuaianZatQuizScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pemuaian Zat Quiz'),
+        title: const Text('Quiz : Pemuaian Zat'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -237,99 +237,104 @@ class _PemuaianZatQuizScreenState extends State<PemuaianZatQuizScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Logam berbentuk lempeng lingkaran yang terdapat lubang di bagian tengah akan mengalami pemuaian hingga tidak terdapat lubang. Hal tersebut . . .',
                     style: TextStyle(fontSize: 18),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                         'Dapat terjadi karena logam mempunyai ke arah lubang'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                         'Tidak dapat terjadi karena logam keterbatasan ruang pada lubang sehingga mempunyai ke arah luar'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child:
-                        Text('Dapat terjadi karena logam memuai ke segala arah'),
+                    child: const Text(
+                        'Dapat terjadi karena logam memuai ke segala arah'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                         'Tidak dapat terjadi karena perbedaan suhu pada lubang relatif konstan sehingga memuai ke arah luar'),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                         'Tidak dapat terjadi karena kalor tidak mengalir ke arah dalam sehingga memuai ke arah luar'),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   if (hasAnsweredQuestion)
                     Column(
                       children: [
-                        Text(
+                        const Text(
                           'Jawaban: Tidak dapat terjadi karena perbedaan suhu pada lubang relatif konstan sehingga memuai ke arah luar',
                           style: TextStyle(fontSize: 18),
                         ),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         ElevatedButton(
                           onPressed: () {
                             Navigator.push(
@@ -339,7 +344,7 @@ class _PemuaianZatQuizScreenState extends State<PemuaianZatQuizScreen> {
                               ),
                             );
                           },
-                          child: Text('Pembahasan'),
+                          child: const Text('Pembahasan'),
                         ),
                       ],
                     ),

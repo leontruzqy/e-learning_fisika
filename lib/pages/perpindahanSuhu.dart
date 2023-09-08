@@ -14,7 +14,7 @@ class PerpindahanSuhuTopicScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Perpindahan Kalor',
         ),
         centerTitle: true,
@@ -28,7 +28,7 @@ class PerpindahanSuhuTopicScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
           IconButton(
             onPressed: () {
@@ -39,7 +39,7 @@ class PerpindahanSuhuTopicScreen extends StatelessWidget {
                 ),
               );
             },
-            icon: Icon(Icons.arrow_forward),
+            icon: const Icon(Icons.arrow_forward),
           ),
         ],
       ),
@@ -375,7 +375,7 @@ class _PerpindahanKalorQuizScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pemuaian Zat Padat Quiz'),
+        title: const Text('Quiz : Perpindahan Kalor'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -385,11 +385,11 @@ class _PerpindahanKalorQuizScreenState
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     'Batang besi panjangnya 2 meter dengan luas penampang 5cm2 memiliki perbedaan suhu diantara kedua ujungnya 100 K. jika konduktivitas termal besi 4,8 J/s.m.K. maka laju hantaran kalornya adalah ….',
                     style: TextStyle(fontSize: 18),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
@@ -405,7 +405,7 @@ class _PerpindahanKalorQuizScreenState
                     child: Math.tex(r'1,2~X~ 10^{-5}~J/s',
                         mathStyle: MathStyle.display),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
@@ -421,7 +421,7 @@ class _PerpindahanKalorQuizScreenState
                     child: Math.tex(r'1,2~X~ 10^{-3}~J/s',
                         mathStyle: MathStyle.display),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
@@ -437,7 +437,7 @@ class _PerpindahanKalorQuizScreenState
                     child: Math.tex(r'4,8~X~ 10^{-5}~J/s',
                         mathStyle: MathStyle.display),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
@@ -453,7 +453,7 @@ class _PerpindahanKalorQuizScreenState
                     child: Math.tex(r'4,8~X~ 10^{-3}~J/s',
                         mathStyle: MathStyle.display),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   ElevatedButton(
                     onPressed:
                         hasAnsweredQuestion ? null : () => answerQuestion(),
@@ -469,7 +469,7 @@ class _PerpindahanKalorQuizScreenState
                     child: Math.tex(r'5,0~X~ 10^{-4}~J/s',
                         mathStyle: MathStyle.display),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   if (hasAnsweredQuestion)
                     Column(
                       children: [
@@ -484,7 +484,7 @@ class _PerpindahanKalorQuizScreenState
                               ),
                             );
                           },
-                          child: Text('Pembahasan'),
+                          child: const Text('Pembahasan'),
                         ),
                       ],
                     ),
