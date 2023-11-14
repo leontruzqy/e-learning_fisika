@@ -7,7 +7,7 @@ class PembahasanQuizSatuScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
   final int score;
 
-  PembahasanQuizSatuScreen({required this.score});
+  const PembahasanQuizSatuScreen({super.key, required this.score});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +69,7 @@ class PembahasanQuizDuaScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
   final int score;
 
-  PembahasanQuizDuaScreen({required this.score});
+  const PembahasanQuizDuaScreen({super.key, required this.score});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -144,7 +144,7 @@ class PembahasanQuizTigaScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
   final int score;
 
-  PembahasanQuizTigaScreen({required this.score});
+  const PembahasanQuizTigaScreen({super.key, required this.score});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -217,7 +217,7 @@ class PembahasanQuizEmpatScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
   final int score;
 
-  PembahasanQuizEmpatScreen({required this.score});
+  const PembahasanQuizEmpatScreen({super.key, required this.score});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -290,7 +290,7 @@ class PembahasanQuizLimaScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
   final int score;
 
-  PembahasanQuizLimaScreen({required this.score});
+  const PembahasanQuizLimaScreen({super.key, required this.score});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -363,7 +363,7 @@ class PembahasanQuizEnamScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
   final int score;
 
-  PembahasanQuizEnamScreen({required this.score});
+  const PembahasanQuizEnamScreen({super.key, required this.score});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -436,7 +436,7 @@ class PembahasanQuizTujuhScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
   final int score;
 
-  PembahasanQuizTujuhScreen({required this.score});
+  const PembahasanQuizTujuhScreen({super.key, required this.score});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -510,7 +510,7 @@ class PembahasanQuizDelapanScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
   final int score;
 
-  PembahasanQuizDelapanScreen({required this.score});
+  const PembahasanQuizDelapanScreen({super.key, required this.score});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -584,7 +584,7 @@ class PembahasanQuizSembilanScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
   final int score;
 
-  PembahasanQuizSembilanScreen({required this.score});
+  const PembahasanQuizSembilanScreen({super.key, required this.score});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -659,7 +659,7 @@ class PembahasanQuizSepuluhScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
   final int score;
 
-  PembahasanQuizSepuluhScreen({required this.score});
+  const PembahasanQuizSepuluhScreen({super.key, required this.score});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 
 class PembahasanSatuScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
+
+  const PembahasanSatuScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,7 @@ class PembahasanSatuScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => KalorTopicScreen(),
+                  builder: (context) => const KalorTopicScreen(),
                 ),
               );
             },
@@ -77,6 +79,8 @@ class PembahasanSatuScreen extends StatelessWidget {
 
 class PembahasanDuaScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
+
+  const PembahasanDuaScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +95,7 @@ class PembahasanDuaScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => KalorTopicScreen(),
+                  builder: (context) => const KalorTopicScreen(),
                 ),
               );
             },
@@ -102,7 +106,7 @@ class PembahasanDuaScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PemuaianZatTopicScreen(),
+                  builder: (context) => const PemuaianZatTopicScreen(),
                 ),
               );
             },
@@ -136,6 +140,8 @@ class PembahasanDuaScreen extends StatelessWidget {
 
 class PembahasanTigaScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
+
+  const PembahasanTigaScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -150,7 +156,7 @@ class PembahasanTigaScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PemuaianZatTopicScreen(),
+                  builder: (context) => const PemuaianZatTopicScreen(),
                 ),
               );
             },
@@ -161,7 +167,7 @@ class PembahasanTigaScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PemuaianZatPadatTopicScreen(),
+                  builder: (context) => const PemuaianZatPadatQuizScreen(),
                 ),
               );
             },
@@ -193,6 +199,8 @@ class PembahasanTigaScreen extends StatelessWidget {
 
 class PembahasanEmpatScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
+
+  const PembahasanEmpatScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -207,7 +215,7 @@ class PembahasanEmpatScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PemuaianZatPadatTopicScreen(),
+                  builder: (context) => const PemuaianZatTopicScreen(),
                 ),
               );
             },
@@ -218,7 +226,7 @@ class PembahasanEmpatScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PerpindahanSuhuTopicScreen(),
+                  builder: (context) => const PerpindahanSuhuTopicScreen(),
                 ),
               );
             },
@@ -250,6 +258,8 @@ class PembahasanEmpatScreen extends StatelessWidget {
 
 class PembahasanLimaScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
+
+  const PembahasanLimaScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -264,7 +274,7 @@ class PembahasanLimaScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PerpindahanSuhuTopicScreen(),
+                  builder: (context) => const PerpindahanSuhuTopicScreen(),
                 ),
               );
             },
@@ -276,7 +286,7 @@ class PembahasanLimaScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => VideoTwoScreen(),
+                  builder: (context) => const VideoTwoScreen(),
                 ),
               );
             },

@@ -100,6 +100,9 @@ flutter:
     - assets/images/quiz9.png
     - assets/images/quiz10.png
     - assets/audio/music.mp3
+    - assets/images/Picture1.png
+    - assets/images/Picture2.png
+    - assets/images/Picture3.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

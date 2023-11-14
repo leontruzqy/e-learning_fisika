@@ -1,16 +1,18 @@
 import 'package:elearning/pages/pembahasan.dart';
 import 'package:elearning/pages/suhu.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_math_fork/ast.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 
 class KalorTopicScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
+  final fontSizeInfo = const TextStyle(fontSize: 12);
   final fontSizeMainText =
       const TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
   final fontSizeMathText = const TextStyle(fontSize: 18);
   final fontSizeTextItalic =
       const TextStyle(fontSize: 18, fontStyle: FontStyle.italic);
+
+  const KalorTopicScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +27,7 @@ class KalorTopicScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => SuhuTopicScreen(),
+                  builder: (context) => const SuhuTopicScreen(),
                 ),
               );
             },
@@ -36,7 +38,7 @@ class KalorTopicScreen extends StatelessWidget {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => KalorQuizScreen(),
+                  builder: (context) => const KalorQuizScreen(),
                 ),
               );
             },
@@ -51,20 +53,27 @@ class KalorTopicScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text('''Pengaruh Kalor pada Zat\nPendahuluan\n''',
+                    style: fontSizeMainText),
                 Text(
-                  '''Pengaruh Kalor pada Zat\nPendahuluan\n 
+                  ''' 
             Ketika es krim dibiarkan di tempat terbuka dapat dengan cepat mencair. Mengapa hal tersebut dapat terjadi? Ketika segelas teh dengan suhu normal diisi dengan bongkahan es, permukaan luas gelas menjadi basah? Mengapa demikian? Mengapa secangkir kopi suhunya lebih tinggi daripada lingkungan sekitarnya?\n
-Ketika air dipanaskan ada proses transfer energi dari satu zat ke zat lainnya yang disertai dengan perubahan suhu atau yang disebut dengan kalor. Kalor yang diterima air ini digunakan untuk menaikkan suhunya sampai mencapai titik didih bahkan untuk mengubah wujud dari cair menjadi gas.\n
+Kalor merupakan bentuk energi panas atau jumlah panas yang ada dalam sebuah benda. Kalor memiliki satuan internasional Joule (J). Satuan lain dari kalor adalah kalori (kal). Satu kalori berarti banyaknya kalor yang dibutuhkan untuk memanaskan 1 gram air sampai suhunya naik 1°C. Untuk mengonversi satuan dari joule ke kalori atau sebaliknya, gunakan persamaan berikut.\n
+1 kalori = 4,2 joule\n
+1 joule = 0,24 kalori\n
             ''',
                   style: fontSizeText,
+                  textAlign: TextAlign.justify,
                 ),
                 Text(
                   "1) Kalor Jenis dan Kapasitas Kalor\n\n",
                   style: fontSizeMainText,
+                  textAlign: TextAlign.justify,
                 ),
                 Text(
-                  " Kalor jenis suatu benda didefinisikan sebagai jumlah kalor yang diperlukan untuk menaikkan suhu 1 kg suatu zat sebesar 1 K. Kalor jenis ini menunjukkan kemampuan suatu benda untuk menyerap kalor. Semakin besar kalor jenis suatu benda, semakin besar pula kemampuan benda tersebut dalam menyerap kalor. Secara matematis:",
+                  "Kalor jenis adalah karakteristik suatu zat yang menunjukkan kemampuannya menyerap kalor. Untuk menentukan besarnya kalor jenis setiap zat. Secara matematis dituliskan:\n",
                   style: fontSizeText,
+                  textAlign: TextAlign.justify,
                 ),
                 Center(
                   child: Math.tex(
@@ -89,6 +98,7 @@ Ketika air dipanaskan ada proses transfer energi dari satu zat ke zat lainnya ya
                 Text(
                   '''\nDengan:''',
                   style: fontSizeText,
+                  textAlign: TextAlign.justify,
                 ),
                 Row(
                   children: [
@@ -143,14 +153,19 @@ Ketika air dipanaskan ada proses transfer energi dari satu zat ke zat lainnya ya
                   ],
                 ),
                 Center(
+                    child: Text('''\nTabel 3. Kalor Jenis''',
+                        style: fontSizeInfo, textAlign: TextAlign.justify)),
+                Center(
                   child: Image.asset(
                     'assets/images/kalor1.png',
                     width: 500,
                   ),
                 ),
                 Text(
-                    "Kapasitas kalor suatu benda adalah jumlah kalor yang diperlukan atau dilepaskan jika suhu benda tersebut dinaikkan atau diturunkan 1 K atau 1°C. Secara matematis dapat dirumuskan sebagai berikut:\n",
-                    style: fontSizeText),
+                  "\nKapasitas kalor suatu benda adalah jumlah kalor yang diperlukan atau dilepaskan jika suhu benda tersebut dinaikkan atau diturunkan 1 K atau 1°C. Secara matematis dapat dirumuskan sebagai berikut:\n",
+                  style: fontSizeText,
+                  textAlign: TextAlign.justify,
+                ),
                 Row(
                   children: [
                     Math.tex(
@@ -409,6 +424,8 @@ Ketika air dipanaskan ada proses transfer energi dari satu zat ke zat lainnya ya
 }
 
 class KalorQuizScreen extends StatefulWidget {
+  const KalorQuizScreen({super.key});
+
   @override
   _KalorQuizScreenState createState() => _KalorQuizScreenState();
 }
@@ -537,7 +554,7 @@ class _KalorQuizScreenState extends State<KalorQuizScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => PembahasanDuaScreen(),
+                                builder: (context) => const PembahasanDuaScreen(),
                               ),
                             );
                           },

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 // ScoreHolder class
 class QuizScreen extends StatefulWidget {
+  const QuizScreen({super.key});
+
   @override
   _QuizScreenState createState() => _QuizScreenState();
 }
@@ -209,6 +211,7 @@ class _QuizScreenState extends State<QuizScreen> {
                     Text(
                       questions[currentQuestion]['questionText'] as String,
                       style: const TextStyle(fontSize: 18),
+                      textAlign: TextAlign.justify,
                     ),
                     const SizedBox(height: 20), // Add spacing here
 
@@ -247,7 +250,7 @@ class _QuizScreenState extends State<QuizScreen> {
 class ResultScreen extends StatelessWidget {
   final int score;
 
-  ResultScreen({required this.score});
+  const ResultScreen({super.key, required this.score});
 
   @override
   Widget build(BuildContext context) {
@@ -275,7 +278,7 @@ class ResultScreen extends StatelessWidget {
                   onPressed: () {
                     // Navigate back to the quiz screen or any other desired screen
                     Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => QuizScreen()));
+                        MaterialPageRoute(builder: (context) => const QuizScreen()));
                   },
                   child: const Text('Ulangi'),
                 ),
@@ -286,7 +289,7 @@ class ResultScreen extends StatelessWidget {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => MainMenuScreen()));
+                            builder: (context) => const MainMenuScreen()));
                   },
                   child: const Text('Main Menu'),
                 ),

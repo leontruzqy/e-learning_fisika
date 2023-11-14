@@ -1,9 +1,11 @@
 import 'package:elearning/main.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import 'package:audioplayers/audioplayers.dart';
+// import 'package:audioplayers/audioplayers.dart';
 
 class VideoOneScreen extends StatefulWidget {
+  const VideoOneScreen({super.key});
+
   @override
   _VideoOneScreenState createState() => _VideoOneScreenState();
 }
@@ -34,7 +36,7 @@ class _VideoOneScreenState extends State<VideoOneScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Suhu dan Kalor'),
+        title: const Text('Suhu dan Kalor'),
         actions: [
           IconButton(
             onPressed: () {
@@ -44,7 +46,7 @@ class _VideoOneScreenState extends State<VideoOneScreen> {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => LearningScreen(),
+                  builder: (context) => const LearningScreen(),
                 ),
               );
             },
@@ -58,7 +60,7 @@ class _VideoOneScreenState extends State<VideoOneScreen> {
                 aspectRatio: _controller.value.aspectRatio,
                 child: VideoPlayer(_controller),
               )
-            : CircularProgressIndicator(), // Show a loading indicator until the video is initialized
+            : const CircularProgressIndicator(), // Show a loading indicator until the video is initialized
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

@@ -4,7 +4,6 @@ import 'package:elearning/pages/videos_one.dart';
 import 'package:elearning/pages/suhu.dart';
 import 'package:elearning/pages/kalor.dart';
 import 'package:elearning/pages/profil.dart';
-import 'package:elearning/pages/pemuaianZatPadat.dart';
 import 'package:elearning/pages/perpindahanSuhu.dart';
 import 'package:elearning/pages/quiz.dart';
 import 'package:elearning/pages/videos_two.dart';
@@ -30,7 +29,7 @@ class LearningApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Learning App',
-      home: SplashScreen(),
+      home: const SplashScreen(),
       theme: ThemeData(
         primarySwatch: Colors.brown,
       ),
@@ -52,8 +51,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Timer(
         const Duration(seconds: 3),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => WelcomeScreen())));
+        () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const WelcomeScreen())));
   }
   // Function to play the audio
 
@@ -89,6 +88,8 @@ class _SplashScreenState extends State<SplashScreen> {
 }
 
 class LearningScreen extends StatefulWidget {
+  const LearningScreen({super.key});
+
   @override
   State<LearningScreen> createState() => _LearningScreenState();
 }
@@ -97,8 +98,8 @@ class _LearningScreenState extends State<LearningScreen> {
   final List<String> topics = [
     'Suhu',
     'Kalor',
-    'Pemuaian Zat',
-    'Pemuaian Zat Padat',
+    'Pemuaian',
+    // 'Pemuaian Zat Padat',
     'Perpindahan Kalor',
     'Fenomena Suhu dan Kalor'
   ];
@@ -114,7 +115,7 @@ class _LearningScreenState extends State<LearningScreen> {
             // Handle the back button action here
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => MainMenuScreen()),
+              MaterialPageRoute(builder: (context) => const MainMenuScreen()),
             );
           },
         ),
@@ -143,31 +144,31 @@ class _LearningScreenState extends State<LearningScreen> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            SuhuTopicScreen()),
+                                            const SuhuTopicScreen()),
                                   );
                                 } else if (topic == 'Kalor') {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            KalorTopicScreen()),
+                                            const KalorTopicScreen()),
                                   );
-                                } else if (topic == 'Pemuaian Zat') {
+                                } else if (topic == 'Pemuaian') {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            PemuaianZatTopicScreen()),
+                                            const PemuaianZatTopicScreen()),
                                   );
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.brown,
-                                minimumSize: Size(300, 80),
+                                backgroundColor: Colors.brown,
+                                minimumSize: const Size(300, 80),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(16),
                                 ),
-                                padding: EdgeInsets.all(20),
+                                padding: const EdgeInsets.all(20),
                               ),
                               child: Text(
                                 topic,
@@ -191,36 +192,37 @@ class _LearningScreenState extends State<LearningScreen> {
                             padding: const EdgeInsets.all(18.0),
                             child: ElevatedButton(
                               onPressed: () {
-                                if (topic == 'Pemuaian Zat Padat') {
+                                if (topic == 'Perpindahan Kalor') {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            PemuaianZatPadatTopicScreen()),
+                                            const PerpindahanSuhuTopicScreen()),
                                   );
-                                } else if (topic == 'Perpindahan Kalor') {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            PerpindahanSuhuTopicScreen()),
-                                  );
+                                  // } else if (topic == 'Fenomena Suhu dan Kalor') {
+                                  //   Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(
+                                  //         builder: (context) =>
+                                  //             PerpindahanSuhuTopicScreen()),
+                                  //   );
                                 } else if (topic == 'Fenomena Suhu dan Kalor') {
                                   audioPlayer.pause();
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => VideoTwoScreen()),
+                                        builder: (context) =>
+                                            const VideoTwoScreen()),
                                   );
                                 }
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.brown,
-                                minimumSize: Size(300, 80),
+                                backgroundColor: Colors.brown,
+                                minimumSize: const Size(300, 80),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(16),
                                 ),
-                                padding: EdgeInsets.all(20),
+                                padding: const EdgeInsets.all(20),
                               ),
                               child: Text(
                                 topic,
@@ -298,7 +300,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 // audioPlayer.setVolume(0.2);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MainMenuScreen()),
+                  MaterialPageRoute(
+                      builder: (context) => const MainMenuScreen()),
                 );
               },
               child: Text('Masuk', style: GoogleFonts.roboto(fontSize: 24)),
@@ -315,6 +318,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               height: 160,
             ),
           ),
+          const Positioned(
+            bottom: 32,
+            right: 32,
+            child: Card(
+              margin: EdgeInsets.all(18.0),
+              child: Text(
+                'App by: Leon Truzqy',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -322,6 +336,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 }
 
 class MainMenuScreen extends StatefulWidget {
+  const MainMenuScreen({super.key});
+
   @override
   State<MainMenuScreen> createState() => _MainMenuScreenState();
 }
@@ -330,9 +346,56 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
   @override
   void dispose() {
     audioPlayer.dispose();
+    passwordController.dispose();
     super.dispose();
   }
 
+  final TextEditingController passwordController = TextEditingController();
+  final String correctPassword = "VvBnxXvG"; // Replace with the actual password
+
+  //password dialog
+  void showPasswordDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text("Masukkan Password"),
+          content: TextField(
+            controller: passwordController,
+            obscureText: true, // Mask the input
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+              },
+              child: const Text("Batal"),
+            ),
+            TextButton(
+              onPressed: () {
+                if (passwordController.text == correctPassword) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const QuizScreen()),
+                  );
+                } else {
+                  // Show an error message
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text("Password Salah. Coba Lagi."),
+                    ),
+                  );
+                }
+              },
+              child: const Text("Kirim"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  //password dialog
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -363,7 +426,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 SizedBox.fromSize(
-                  size: Size(126, 50),
+                  size: const Size(126, 50),
                   child: ElevatedButton(
                     onPressed: () {
                       audioPlayer.pause();
@@ -371,7 +434,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => VideoOneScreen()),
+                            builder: (context) => const VideoOneScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
@@ -390,15 +453,16 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                     ),
                   ),
                 ),
-                SizedBox(width: 16),
+                const SizedBox(width: 16),
                 SizedBox.fromSize(
-                  size: Size(126, 50),
+                  size: const Size(126, 50),
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => QuizScreen()),
-                      );
+                      showPasswordDialog(context);
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(builder: (context) => QuizScreen()),
+                      // );
                     },
                     style: ElevatedButton.styleFrom(
                       // primary: Colors.brown,
@@ -418,7 +482,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
                 ),
                 const SizedBox(width: 16),
                 SizedBox.fromSize(
-                  size: Size(126, 50),
+                  size: const Size(126, 50),
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -460,7 +524,7 @@ class SoundPlayer {
   static final SoundPlayer instance = SoundPlayer._privateConstructor();
 
   SoundPlayer._privateConstructor() {
-    this.player.setVolume(4.0);
+    player.setVolume(4.0);
   }
 
   Future loopSound() async {
@@ -477,3 +541,86 @@ class SoundPlayer {
     player.stop();
   }
 }
+
+// class PasswordPrompt extends StatefulWidget {
+//   @override
+//   _PasswordPromptState createState() => _PasswordPromptState();
+// }
+
+// class _PasswordPromptState extends State<PasswordPrompt> {
+//   final TextEditingController passwordController = TextEditingController();
+
+//   void showPasswordDialog(BuildContext context) {
+//     showDialog(
+//       context: context,
+//       builder: (context) {
+//         return AlertDialog(
+//           title: Text("Enter Password"),
+//           content: TextField(
+//             controller: passwordController,
+//             obscureText: true, // Mask the input
+//           ),
+//           actions: <Widget>[
+//             TextButton(
+//               onPressed: () {
+//                 Navigator.of(context).pop(); // Close the dialog
+//               },
+//               child: Text("Cancel"),
+//             ),
+//             TextButton(
+//               onPressed: () {
+//                 if (passwordController.text == correctPassword) {
+//                   Navigator.push(
+//                     context,
+//                     MaterialPageRoute(builder: (context) => QuizScreen()),
+//                   );
+//                 } else {
+//                   // Show an error message
+//                   ScaffoldMessenger.of(context).showSnackBar(
+//                     SnackBar(
+//                       content: Text("Incorrect password. Please try again."),
+//                     ),
+//                   );
+//                 }
+//               },
+//               child: Text("Submit"),
+//             ),
+//           ],
+//         );
+//       },
+//     );
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       width: 126,
+//       height: 50,
+//       child: ElevatedButton(
+//         onPressed: () {
+//           showPasswordDialog(context); // Show the password dialog
+//         },
+//         style: ElevatedButton.styleFrom(
+//           primary: Colors.brown,
+//           onPrimary: Colors.green,
+//           shape: RoundedRectangleBorder(
+//             borderRadius: BorderRadius.circular(20.0),
+//           ),
+//         ),
+//         child: const Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: <Widget>[
+//             Icon(Icons.quiz),
+//             Text("Kuis"),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+
+//   @override
+//   void dispose() {
+//     passwordController.dispose();
+//     super.dispose();
+//   }
+// }

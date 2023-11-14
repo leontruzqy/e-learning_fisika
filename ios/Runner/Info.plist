@@ -29,11 +29,6 @@
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UISupportedInterfaceOrientations</key>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
-	</array>
-	<key>NSAppTransportSecurity</key>
 	<array>
 		<!-- <string>UIInterfaceOrientationPortrait</string> -->
 		<string>UIInterfaceOrientationLandscapeLeft</string>
@@ -42,7 +37,7 @@
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<!-- <string>UIInterfaceOrientationPortrait</string> -->
-		<!-- <string>UIInterfaceOrientationPortraitUpsideDown</string> -->
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
@@ -52,7 +47,5 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
-	<key>NSAllowsArbitraryLoads</key>
-		<true/>
 </dict>
 </plist>

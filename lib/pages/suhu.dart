@@ -4,12 +4,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 
 class SuhuTopicScreen extends StatefulWidget {
+  const SuhuTopicScreen({super.key});
+
   @override
   State<SuhuTopicScreen> createState() => _SuhuTopicScreenState();
 }
 
 class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
   final fontSizeText = const TextStyle(fontSize: 16);
+  final fontSizeInfo = const TextStyle(fontSize: 12);
   final fontSizeMainText =
       const TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
   final fontSizeMathText = const TextStyle(fontSize: 18);
@@ -30,7 +33,7 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => SuhuQuizScreen(),
+                  builder: (context) => const SuhuQuizScreen(),
                 ),
               );
             },
@@ -38,152 +41,200 @@ class _SuhuTopicScreenState extends State<SuhuTopicScreen> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: (Padding(
-          padding: const EdgeInsets.all(32.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                '''Pendahuluan\n 
-          Mengukur panas dan dingin suatu benda dengan tangan dan perasaan (indra) tidak dapat mengukur suhu secara tepat, mengapa hal tersebut dapat terjadi? Sedangkan, dengan menggunakan termometer, pengukuran akan lebih akurat berapa suhu suatu benda tersebut. Mengapa demikian?
-          Suhu merupakan derajat panas atau dingin yang dirasakan indra. Suhu menyatakan derajat panas dinginnya suatu benda. Alat yang biasa digunakan untuk pengukur suhu dinamakan termometer.\n Thermometer\n
-          Termometer merupakan alat yang sederhana dengan fungsi yang besar. Ada bermacam macam termometer mulai dari yang analog sampai yang digital, mulai dari yang menggunakan air raksa sampai yang menggunakan inframerah. (Kusrini,2020)
-          \n Skala Suhu
-          Terdapat 4 skala suhu yang digunakan pada termometer di antaranya Celcius (C),Reamur (R), Fahrenheit (F) dan Kelvin (K) \n
-          ''',
-                style: TextStyle(fontSize: 18),
-              ),
-              Center(
-                child: Image.asset(
-                  'assets/images/table_suhu1.png',
-                  width: 600,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: (Padding(
+            padding: const EdgeInsets.all(32.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '''Mengukur panas dan dingin suatu benda dengan tangan dan perasaan (indra) tidak dapat mengukur suhu secara tepat.Mengapa hal tersebut dapat terjadi? Sedangkan, menggunakan termometer, pengukuran suhu akan lebih akurat. Mengapa demikian?\n
+      Suhu merupakan suatu besaran yang menyatakan derajat panas dingin suatu benda. Alat yang biasa digunakan untuk pengukur suhu dinamakan termometer.
+            ''',
+                  style: fontSizeText,
+                  textAlign: TextAlign.justify,
                 ),
-              ),
-              const Text(
-                  '''\nKonversi antara 4 skala tersebut ditunjukkan oleh tabel berikut\n ''',
-                  style: TextStyle(fontSize: 18)),
-              Center(
-                child: Image.asset(
-                  'assets/images/table_suhu2.png',
-                  width: 700,
+                Text(
+                  '''a.	Termometer\n
+      Termometer merupakan alat yang sederhana dengan fungsi yang besar. Ada bermacam macam termometer mulai dari yang analog sampai yang digital, mulai dari yang menggunakan air raksa sampai yang menggunakan inframerah. (Kusrini, 2020)
+      Termometer''',
+                  style: fontSizeText,
+                  textAlign: TextAlign.justify,
                 ),
-              ),
-              const Text(
-                '''\nSkala Celcius dan Fahrenheit banyak kita temukan di kehidupan sehari-hari, sedangkan skala suhu yang ditetapkan sebagai Satuan Internasional adalah Kelvin. Berikut gambaran mengkonversi suhu pada 2 termometer yang berbeda secara umum dituliskan: \n
+                Text(
+                  '''\nb.	Skala Suhu\n
+      Terdapat 4 skala suhu yang digunakan pada termometer di antaranya Celcius (C), Reamur (R), Fahrenheit (F) dan Kelvin (K)
       ''',
-                style: TextStyle(fontSize: 18),
-              ),
-              Center(
-                child: Image.asset(
-                  'assets/images/titik_didih.png',
-                  width: 400,
+                  style: fontSizeText,
+                  textAlign: TextAlign.justify,
                 ),
-              ),
-              const Text('\n\n\n\n'),
-              const Text(
-                'Temperatur:',
-                style: TextStyle(fontSize: 18),
-              ),
-              SliderTheme(
-                data: SliderTheme.of(context).copyWith(
-                  activeTrackColor:
-                      Colors.blue, // Customize the active track color
-                  inactiveTrackColor:
-                      Colors.grey, // Customize the inactive track color
-                  thumbColor: Colors.blue, // Customize the thumb color
-                  overlayColor: Colors.blue
-                      .withOpacity(0.3), // Customize the overlay color
-                  thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10.0),
-                  overlayShape: const RoundSliderOverlayShape(overlayRadius: 20.0),
-                  tickMarkShape: const RoundSliderTickMarkShape(),
+                Center(
+                    child: Text('''Tabel 1. Skala Suhu''',
+                        style: fontSizeInfo, textAlign: TextAlign.justify)),
+                Center(
+                  child: Image.asset(
+                    'assets/images/table_suhu1.png',
+                    width: 600,
+                  ),
                 ),
-                child: Slider(
-                  value: _sliderValue,
-                  label: "tes",
-                  onChanged: (newValue) {
-                    setState(() {
-                      _sliderValue = newValue;
-                      _fahrenheitValue =
-                          _sliderValue * 9 / 5 + 32; // Update Fahrenheit value
-                      _kelvinValue =
-                          _sliderValue + 273.15; // Update Kelvin value
-                      _reamurValue =
-                          _sliderValue * 4 / 5; // Update Reamur value
-                    });
-                  },
-                  min: 0.0,
-                  max: 100.0,
+                Center(
+                    child: Text('''\n\nTabel 2. Konversi antara 4 skala''',
+                        style: fontSizeInfo, textAlign: TextAlign.justify)),
+                Center(
+                  child: Image.asset(
+                    'assets/images/table_suhu2.png',
+                    width: 700,
+                  ),
                 ),
-              ),
-              Text(
-                'Celcius',
-                style: GoogleFonts.montserrat(textStyle: fontSizeMainText),
-              ),
-              Text(
-                'T °C =  ${_sliderValue.toStringAsFixed(2)} °C',
-                style: const TextStyle(fontSize: 18),
-              ),
-              Text(
-                'Fahrenheit',
-                style: GoogleFonts.montserrat(textStyle: fontSizeMainText),
-              ),
-              Row(
-                children: [
-                  Math.tex(
-                    r'T~°F~=~\frac{9}{5}~ \times ~99~+~32=~',
+                Text(
+                    '''\nSkala Celcius dan Fahrenheit banyak kita temukan di kehidupan sehari-hari. Sedangkan skala suhu yang ditetapkan sebagai Satuan Internasional adalah Kelvin. Berikut gambar cara mengkonversi suhu pada 2 termometer yang berbeda secara umum.\n
+        ''',
+                    style: fontSizeText, textAlign: TextAlign.justify),
+                Center(
+                  child: Image.asset(
+                    'assets/images/titik_didih.png',
+                    width: 400,
+                  ),
+                ),
+                Center(
+                  child: Text('Gambar 1. Konversi suhu 2 termometer',
+                      style: fontSizeInfo, textAlign: TextAlign.justify),
+                ),
+                const Text(
+                    '''\nSecara matematis, hal ini dapat ditulis sebagai berikut\n''',
+                    style: TextStyle(fontSize: 18),
+                    textAlign: TextAlign.justify),
+                Math.tex(
+                    r'\frac{X-X_{min}}{X_{max}-X_{min}}~-~\frac{Y-Y_{min}} {Y_{max}-Y_{min}}',
                     mathStyle: MathStyle.display,
-                    textStyle: fontSizeMathText,
+                    textStyle: fontSizeMathText),
+                const Text('\n\n\n\n'),
+                const Text(
+                  'Temperatur:',
+                  style: TextStyle(fontSize: 18),
+                ),
+                SliderTheme(
+                  data: SliderTheme.of(context).copyWith(
+                    activeTrackColor:
+                        Colors.blue, // Customize the active track color
+                    inactiveTrackColor:
+                        Colors.grey, // Customize the inactive track color
+                    thumbColor: Colors.blue, // Customize the thumb color
+                    overlayColor: Colors.blue
+                        .withOpacity(0.3), // Customize the overlay color
+                    thumbShape:
+                        const RoundSliderThumbShape(enabledThumbRadius: 10.0),
+                    overlayShape:
+                        const RoundSliderOverlayShape(overlayRadius: 20.0),
+                    tickMarkShape: const RoundSliderTickMarkShape(),
                   ),
-                  Text(
-                    '${_fahrenheitValue.toStringAsFixed(2)} °F',
-                    style: const TextStyle(fontSize: 18),
+                  child: Slider(
+                    value: _sliderValue,
+                    label: "tes",
+                    onChanged: (newValue) {
+                      setState(() {
+                        _sliderValue = newValue;
+                        _fahrenheitValue = _sliderValue * 9 / 5 +
+                            32; // Update Fahrenheit value
+                        _kelvinValue =
+                            _sliderValue + 273.15; // Update Kelvin value
+                        _reamurValue =
+                            _sliderValue * 4 / 5; // Update Reamur value
+                      });
+                    },
+                    min: 0.0,
+                    max: 100.0,
                   ),
-                ],
-              ),
-              Text(
-                'Kelvin',
-                style: GoogleFonts.montserrat(textStyle: fontSizeMainText),
-              ),
-              Row(
-                children: [
-                  Math.tex(
-                    r'T~K~=~99~+~273~=~',
-                    mathStyle: MathStyle.display,
-                    textStyle: fontSizeMathText,
-                  ),
-                  Text(
-                    '${_kelvinValue.toStringAsFixed(2)} °K',
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                ],
-              ),
-              Text(
-                'Reamur',
-                style: GoogleFonts.montserrat(textStyle: fontSizeMainText),
-              ),
-              Row(
-                children: [
-                  Math.tex(
-                    r'T ~ ° R ~ = ~ \frac {4} {5} ~ \times ~ 99 ~ = ~ ',
-                    mathStyle: MathStyle.display,
-                    textStyle: fontSizeMathText,
-                  ),
-                  Text(
-                    '${_reamurValue.toStringAsFixed(2)} °R',
-                    style: const TextStyle(fontSize: 18),
-                  )
-                ],
-              ),
-            ],
-          ),
-        )),
+                ),
+                Text(
+                  'Celcius',
+                  style: GoogleFonts.montserrat(textStyle: fontSizeMainText),
+                ),
+                Text(
+                  'T °C =  ${_sliderValue.toStringAsFixed(2)} °C',
+                  style: const TextStyle(fontSize: 18),
+                ),
+                Text(
+                  'Fahrenheit',
+                  style: GoogleFonts.montserrat(textStyle: fontSizeMainText),
+                ),
+                Row(
+                  children: [
+                    Math.tex(
+                      r'T~°F~=~\frac{9}{5}~ \times ~',
+                      mathStyle: MathStyle.display,
+                      textStyle: fontSizeMathText,
+                    ),
+                    Text(
+                      _sliderValue.toStringAsFixed(2),
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                    Math.tex(
+                      r'+~32=~',
+                      mathStyle: MathStyle.display,
+                      textStyle: fontSizeMathText,
+                    ),
+                    Text(
+                      '${_fahrenheitValue.toStringAsFixed(2)} °F',
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+                Text(
+                  'Kelvin',
+                  style: GoogleFonts.montserrat(textStyle: fontSizeMainText),
+                ),
+                Row(
+                  children: [
+                    Math.tex(
+                      r'T~K~=~',
+                      mathStyle: MathStyle.display,
+                      textStyle: fontSizeMathText,
+                    ),
+                    Text(
+                      _sliderValue.toStringAsFixed(2),
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                    Text(
+                      ' + 273 = ${_kelvinValue.toStringAsFixed(2)} °K',
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
+                Text(
+                  'Reamur',
+                  style: GoogleFonts.montserrat(textStyle: fontSizeMainText),
+                ),
+                Row(
+                  children: [
+                    Math.tex(
+                      r'T ~ ° R ~ = ~ \frac {4} {5} ~ \times ~',
+                      mathStyle: MathStyle.display,
+                      textStyle: fontSizeMathText,
+                    ),
+                    Text(
+                      _sliderValue.toStringAsFixed(2),
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                    Text(
+                      '  =  ${_reamurValue.toStringAsFixed(2)} °R',
+                      style: const TextStyle(fontSize: 18),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          )),
+        ),
       ),
     );
   }
 }
 
 class SuhuQuizScreen extends StatefulWidget {
+  const SuhuQuizScreen({super.key});
+
   @override
   _SuhuQuizScreenState createState() => _SuhuQuizScreenState();
 }
@@ -311,7 +362,8 @@ class _SuhuQuizScreenState extends State<SuhuQuizScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => PembahasanSatuScreen(),
+                              builder: (context) =>
+                                  const PembahasanSatuScreen(),
                             ),
                           );
                         },

@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 class ProfileScreen extends StatelessWidget {
   final fontSizeText =
       GoogleFonts.montserrat(fontSize: 16, fontWeight: FontWeight.bold);
+
+  ProfileScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,6 +77,14 @@ class ProfileScreen extends StatelessWidget {
                               style: fontSizeText, textAlign: TextAlign.start),
                         ],
                       ),
+                      // Column(
+                      //   mainAxisAlignment: MainAxisAlignment.end,
+                      //   crossAxisAlignment: CrossAxisAlignment.end,
+                      //   children: [
+                      //     Text("App by: Leon Truzqy",
+                      //         style: fontSizeText, textAlign: TextAlign.end),
+                      //   ],
+                      // )
                     ],
                   ),
                 ],

@@ -1,15 +1,17 @@
 import 'package:elearning/pages/pembahasan.dart';
-import 'package:elearning/pages/pemuaianZatPadat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 
 class PerpindahanSuhuTopicScreen extends StatelessWidget {
   final fontSizeText = const TextStyle(fontSize: 16);
+  final fontSizeInfo = const TextStyle(fontSize: 12);
   final fontSizeMainText =
       const TextStyle(fontSize: 18, fontWeight: FontWeight.bold);
   final fontSizeMathText = const TextStyle(fontSize: 18);
   final fontSizeTextItalic =
       const TextStyle(fontSize: 18, fontStyle: FontStyle.italic);
+
+  const PerpindahanSuhuTopicScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,23 +21,23 @@ class PerpindahanSuhuTopicScreen extends StatelessWidget {
         ),
         centerTitle: true,
         actions: [
+          // IconButton(
+          //   onPressed: () {
+          //     Navigator.pushReplacement(
+          //       context,
+          //       MaterialPageRoute(
+          //         builder: (context) => PemuaianZatPadatTopicScreen(),
+          //       ),
+          //     );
+          //   },
+          //   icon: const Icon(Icons.arrow_back),
+          // ),
           IconButton(
             onPressed: () {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PemuaianZatPadatTopicScreen(),
-                ),
-              );
-            },
-            icon: const Icon(Icons.arrow_back),
-          ),
-          IconButton(
-            onPressed: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PerpindahanKalorQuizScreen(),
+                  builder: (context) => const PerpindahanKalorQuizScreen(),
                 ),
               );
             },
@@ -50,28 +52,53 @@ class PerpindahanSuhuTopicScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Perpindahan Kalor\nPendahuluan\n",
-                    style: fontSizeMainText),
+                Text(
+                  "Perpindahan Kalor\n",
+                  style: fontSizeMainText,
+                  textAlign: TextAlign.justify,
+                ),
+                Text(
+                  "Pendahuluan\n",
+                  style: fontSizeText,
+                  textAlign: TextAlign.justify,
+                ),
                 Text(
                   '''
-            Ketika terdapat dua gelas yang berisi teh panas dan es coklat lalu memegang kedua gelas tersebut apa yang kalian rasakan? Apakah gelas yang berisi teh panas dan gelas berisi es coklat terasa berbeda? Mengapa hal tersebut dapat terjadi? Kemudian, ketika dibiarkan di atas sebuah meja pada waktu yang cukup lama apa yang akan terjadi? Bagaimana rasanya ketika kedua gelas tersebut dipegang?\nPerpindahan kalor (panas) dapat dibagi menjadi tiga jenis berdasarkan medium perantaranya. Tiga jenis perpindahan kalor tersebut adalah konduksi,konveksi, dan radiasi. Gambar di bawah dapat menjelaskan 3 jenis perpindahan panas secara konduksi konveksi dan radiasi secara sekaligus. Rambatan kalor api dari kompor ke panci adalah proses radiasi, kemudian air yang panas di bagian bawah panci akan bergerak ke atas bertukar posisi dengan air dingin-bagian atas menghasilkan transfer kalor melalui konveksi, dan panas yang terdapat di pemegang panci yang terbuat dari logam dapat dihantarkan ke tangan melalui proses konduksi.\n
+            Ketika terdapat dua gelas yang berisi teh panas dan es coklat lalu memegang kedua gelas tersebut apa yang kalian rasakan? Apakah gelas yang berisi teh panas dan gelas berisi es coklat terasa berbeda? Mengapa hal tersebut dapat terjadi? Kemudian, ketika dibiarkan di atas sebuah meja pada waktu yang cukup lama apa yang akan terjadi? Bagaimana rasanya ketika kedua gelas tersebut dipegang?
             ''',
                   style: fontSizeText,
+                  textAlign: TextAlign.justify,
                 ),
-                Text("1. Konduksi\n", style: fontSizeMainText),
+
                 Text(
-                    "Perpindahan kalor secara konduksi (hantaran) adalah perpindahan kalor melalui zat perantara dimana partikel-partikel zat perantara tersebut tidak berpindah. Ada zat yang daya hantar panasnya baik, ada pula zat yang daya hantar panasnya buruk.\n",
-                    style: fontSizeText),
+                  '''Perpindahan kalor merupakan kalor yang dapat berpindah dari benda yang bersuhu tinggi ke benda yang bersuhu lebih rendah. Perpindahan kalor memiliki 3 macam perpindahan antara lain: konduksi, konveksi, dan radiasi. Dalam kehidupan sehari-hari kita sering dihadapkan oleh berbagai macam peristiwa perpindahan kalor ini. Untuk lebih lengkapnya berikut penjelasan macam-macam perpidahan kalor beserta contohnya.\n''',
+                  style: fontSizeText,
+                  textAlign: TextAlign.justify,
+                ),
+                Text("1. Konduksi (Aliran)\n", style: fontSizeMainText),
+                Text(
+                  '''Perpindahan kalor secara konduksi adalah perpindahan kalor melalui zat perantara dimana partikel-partikel zat perantara tersebut tidak berpindah. \n''',
+                  style: fontSizeText,
+                  textAlign: TextAlign.justify,
+                ),
                 Center(
                   child:
-                      Image.asset('assets/images/perpindahan1.png', width: 500),
+                      Image.asset('assets/images/perpindahan1.png', width: 400),
+                ),
+                Center(
+                  child: Text(
+                    "Gambar 6. Peristiwa Konduksi\n",
+                    style: fontSizeInfo,
+                  ),
                 ),
                 Text(
-                    "\nGambar di atas menunjukkan sebuah batang logam yang salah satu ujungnya dipanaskan di atas api sementara ujung yang satu lagi dipegang tangan. Panas yang terjadi di ujung logam yang dipanaskan di atas api dirasakan juga oleh tangan yang memegang ujung logam yang lainnya. Ini membuktikan adanya aliran kalor (panas) pada logam. Peristiwa perpindahan kalor melalui suatu zat tanpa disertai dengan perpindahan partikel partikelnya disebut konduksi. Jumlah kalor yang dipindahkan persatuan waktu, secara matematis dituliskan:\n",
-                    style: fontSizeText),
+                  "\nGambar 6 menunjukkan sebuah batang logam yang salah satu ujungnya dipanaskan di atas api sementara ujung yang satu lagi dipegang tangan. Panas yang terjadi di ujung logam yang dipanaskan di atas api dirasakan juga oleh tangan yang memegang ujung logam yang lainnya. Ini membuktikan adanya aliran kalor (panas) pada logam. Secara matematis dituliskan:\n",
+                  style: fontSizeText,
+                  textAlign: TextAlign.justify,
+                ),
                 Center(
                   child: Math.tex(
-                    r'\frac{Q}{\Delta T}~=~H~=~kA\frac{\Delta T}{L}',
+                    r'\frac{Q}{\Delta T}~=~\frac{kA\Delta T}{L}',
                     mathStyle: MathStyle.display,
                     textStyle: fontSizeMathText,
                   ),
@@ -153,49 +180,55 @@ class PerpindahanSuhuTopicScreen extends StatelessWidget {
                   ],
                 ),
                 Text("\n", style: fontSizeText),
+                Text("2. Konveksi (Hantaran)\n", style: fontSizeMainText),
                 Text(
-                  '''Konveksi\n''',
-                  style: fontSizeMainText,
-                ),
-                Text(
-                  'Perpindahan kalor secara konveksi (aliran) adalah perpindahan kalor karena aliran zat yang dipanaskan. Konveksi hanya terjadi pada zat yang dapat mengalir, yaitu zat cair dan zat gas.\n',
+                  'Peristiwa perpindahan kalor yang disertai perpindahan massa atau perpindahan partikel-partikel zat perantaranya disebut dengan konveksi. Konveksi hanya terjadi pada zat yang dapat mengalir, yaitu zat cair dan zat gas. \n',
                   style: fontSizeText,
+                  textAlign: TextAlign.justify,
                 ),
                 Center(
                   child:
-                      Image.asset('assets/images/perpindahan2.png', width: 500),
+                      Image.asset('assets/images/perpindahan2.png', width: 400),
+                ),
+                Center(
+                  child: Text(
+                    "\nGambar 7. Peristiwa Konveksi",
+                    style: fontSizeInfo,
+                  ),
                 ),
                 Text(
-                    "\nSaat kalian merebus air maka akan terjadi aliran (perpindahan ) kalor dari air yang panas di bagian bawah dengan air yang dingin di bagian atas wadah. Peristiwa perpindahan kalor yang disertai perpindahan massa atau perpindahan partikel-partikel zat perantaranya disebut dengan aliran kalor secara konveksi. Laju kalor secara konveksi , secara matematis dapat dirumuskan:\n",
-                    style: fontSizeText),
+                  "\nSaat kalian merebus air maka akan terjadi aliran (perpindahan ) kalor dari air yang panas di bagian bawah dengan air yang dingin di bagian atas wadah. Laju kalor secara konveksi , secara matematis dapat dirumuskan:\n",
+                  style: fontSizeText,
+                  textAlign: TextAlign.justify,
+                ),
                 Center(
                   child: Math.tex(
-                    r'H~=~h A \Delta T',
+                    r'\frac{Q}{t}=~h A \Delta T',
                     mathStyle: MathStyle.display,
                     textStyle: fontSizeMathText,
                   ),
                 ),
                 Text(
-                  '\Keterangan :\n',
+                  'Keterangan :\n',
                   style: fontSizeText,
                 ),
-                Row(
-                  children: [
-                    Math.tex(
-                      r'H',
-                      mathStyle: MathStyle.display,
-                    ),
-                    Text(
-                      ''' = laju perpindahan kalor''',
-                      style: fontSizeText,
-                    ),
-                    Math.tex(
-                      r'(J~s^{-1})',
-                      mathStyle: MathStyle.display,
-                    ),
-                  ],
-                ),
-                Text("\n", style: fontSizeText),
+                // Row(
+                //   children: [
+                //     Math.tex(
+                //       r'H',
+                //       mathStyle: MathStyle.display,
+                //     ),
+                //     Text(
+                //       ''' = laju perpindahan kalor''',
+                //       style: fontSizeText,
+                //     ),
+                //     Math.tex(
+                //       r'(J~s^{-1})',
+                //       mathStyle: MathStyle.display,
+                //     ),
+                //   ],
+                // ),
+                // Text("\n", style: fontSizeText),
                 Row(
                   children: [
                     Math.tex(
@@ -244,24 +277,30 @@ class PerpindahanSuhuTopicScreen extends StatelessWidget {
                 ),
                 Text("\n", style: fontSizeText),
                 //######################################
+                Text("3. Radiasi (Pancaran)\n", style: fontSizeMainText),
                 Text(
-                  '''Radiasi\n''',
-                  style: fontSizeMainText,
-                ),
-                Text(
-                  'Radiasi adalah perpindahan kalor tanpa zat perantara. Perpindahan kalor dari matahari ke bumi terjadi lewat radiasi (pancaran). Pada peristiwa radiasi kalor, berlaku hukum Stefan-boltzman. “energi yang dipancarkan oleh suatu permukaan hitam dalam bentuk radiasi kalor tiap satuan waktu sebanding dengan luas permukaan (A) dan sebanding dengan pangkat empat suhu mutlak itu (T4).”\n',
+                  'Radiasi adalah perpindahan kalor tanpa zat perantara. Perpindaham kalor dari matahari ke bumi terjadi lewat radiasi (pancaran). Pada peristiwa radiasi kalor, berlaku hukum Stefan-boltzman. “Energi yang dipancarkan oleh suatu permukaan hitam dalam bentuk radiasi kalor tiap satuan waktu sebanding dengan luas permukaan (A) dan sebanding dengan pangkat empat suhu mutlak itu (T4).”\n',
                   style: fontSizeText,
+                  textAlign: TextAlign.justify,
                 ),
                 Center(
                   child:
-                      Image.asset('assets/images/perpindahan3.png', width: 500),
+                      Image.asset('assets/images/perpindahan3.png', width: 400),
+                ),
+                Center(
+                  child: Text(
+                    "\nGambar 8. Peristiwa Radiasi",
+                    style: fontSizeInfo,
+                  ),
                 ),
                 Text(
-                    "\nSaat kalian berkumpul di sekitar api unggun, akan merasakan panas dari api yang menyala. Peristiwa perpindahan kalor tanpa zat perantara disebut dengan radiasi. Besar laju aliran kalor secara matematis dirumuskan :\n",
-                    style: fontSizeText),
+                  "\nSaat kalian berkumpul di sekitar api unggun, akan dirasakan panas dariapi yang menyala. Peristiwa perpindahan kalor tanpa zat perantara disebutdengan radiasi. Besar laju aliran kalor secara matematis dirumuskan :\n",
+                  style: fontSizeText,
+                  textAlign: TextAlign.justify,
+                ),
                 Center(
                   child: Math.tex(
-                    r'\frac{\Delta Q}{\Delta t}~=~e \sigma A T^4',
+                    r'\frac{Q}{\Delta t}~=~e \sigma A T^4',
                     mathStyle: MathStyle.display,
                     textStyle: fontSizeMathText,
                   ),
@@ -353,6 +392,8 @@ class PerpindahanSuhuTopicScreen extends StatelessWidget {
 }
 
 class PerpindahanKalorQuizScreen extends StatefulWidget {
+  const PerpindahanKalorQuizScreen({super.key});
+
   @override
   _PerpindahanKalorQuizScreenState createState() =>
       _PerpindahanKalorQuizScreenState();
@@ -396,8 +437,9 @@ class _PerpindahanKalorQuizScreenState
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
@@ -412,8 +454,9 @@ class _PerpindahanKalorQuizScreenState
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
@@ -428,8 +471,9 @@ class _PerpindahanKalorQuizScreenState
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
@@ -444,8 +488,9 @@ class _PerpindahanKalorQuizScreenState
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
@@ -460,8 +505,9 @@ class _PerpindahanKalorQuizScreenState
                     style: ButtonStyle(
                       overlayColor: MaterialStateProperty.resolveWith<Color?>(
                         (Set<MaterialState> states) {
-                          if (states.contains(MaterialState.pressed))
+                          if (states.contains(MaterialState.pressed)) {
                             return Colors.greenAccent; //<-- SEE HERE
+                          }
                           return null; // Defer to the widget's default.
                         },
                       ),
@@ -480,7 +526,8 @@ class _PerpindahanKalorQuizScreenState
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => PembahasanLimaScreen(),
+                                builder: (context) =>
+                                    const PembahasanLimaScreen(),
                               ),
                             );
                           },

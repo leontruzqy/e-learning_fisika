@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoTwoScreen extends StatefulWidget {
+  const VideoTwoScreen({super.key});
+
   @override
   _VideoTwoScreenState createState() => _VideoTwoScreenState();
 }
@@ -40,7 +42,7 @@ class _VideoTwoScreenState extends State<VideoTwoScreen> {
             // Handle the back button action here
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => LearningScreen()),
+              MaterialPageRoute(builder: (context) => const LearningScreen()),
             );
           },
         ),
@@ -51,7 +53,7 @@ class _VideoTwoScreenState extends State<VideoTwoScreen> {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => LearningScreen(),
+                  builder: (context) => const LearningScreen(),
                 ),
               );
             },
@@ -65,7 +67,7 @@ class _VideoTwoScreenState extends State<VideoTwoScreen> {
                 aspectRatio: _controller.value.aspectRatio,
                 child: VideoPlayer(_controller),
               )
-            : CircularProgressIndicator(), // Show a loading indicator until the video is initialized
+            : const CircularProgressIndicator(), // Show a loading indicator until the video is initialized
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
